@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "a5bcf602-d0ec-4417-97b2-caef072352cb",
+		"name": "UIBankAssessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoginIntoUIBankAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var resp=pm.response.json();\r",
+							"console.log(resp.id);\r",
+							"\r",
+							"pm.globals.set(\"AuthId\",resp.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ShwetaPulipati\",\r\n    \"password\": \"Mummy@143\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/users/login",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyAccounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AuthId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URI}}/accounts?filter[where][userId]=620f1ea2c380ad006e3023e5",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "filter[where][userId]",
+							"value": "620f1ea2c380ad006e3023e5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AuthId}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"friendlyName\": \"Krishna\",\r\n    \"type\": \"savings\",\r\n    \"userId\": \"620f1ea2c380ad006e3023e5\",\r\n    \"balance\": 100,\r\n    \"accountNumber\": 77306064\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URI}}/accounts",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyRegisteredProfileDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AuthId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{URI}}/users/620f1ea2c380ad006e3023e5",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"users",
+						"620f1ea2c380ad006e3023e5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
