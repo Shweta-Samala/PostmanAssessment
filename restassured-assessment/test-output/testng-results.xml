@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="5503" started-at="2022-02-18T15:52:12 IST" finished-at="2022-02-18T15:52:17 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="5503" started-at="2022-02-18T15:52:12 IST" finished-at="2022-02-18T15:52:17 IST">
+      <class name="pages.rest.VerifyAccountDetails">
+        <test-method status="PASS" signature="verifyAccountsDetails()[pri:0, instance:pages.rest.VerifyAccountDetails@2a17b7b6]" name="verifyAccountsDetails" duration-ms="885" started-at="2022-02-18T15:52:17 IST" depends-on-methods="pages.rest.Login.loginUiBank" finished-at="2022-02-18T15:52:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountsDetails -->
+      </class> <!-- pages.rest.VerifyAccountDetails -->
+      <class name="pages.rest.VerifyRegisteredProfileDetails">
+        <test-method status="PASS" signature="verifyRegisteredProfileDetails()[pri:0, instance:pages.rest.VerifyRegisteredProfileDetails@5d76b067]" name="verifyRegisteredProfileDetails" duration-ms="1144" started-at="2022-02-18T15:52:15 IST" depends-on-methods="pages.rest.Login.loginUiBank" finished-at="2022-02-18T15:52:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRegisteredProfileDetails -->
+      </class> <!-- pages.rest.VerifyRegisteredProfileDetails -->
+      <class name="pages.rest.Login">
+        <test-method status="PASS" signature="loginUiBank()[pri:0, instance:pages.rest.Login@4f063c0a]" name="loginUiBank" duration-ms="2617" started-at="2022-02-18T15:52:12 IST" finished-at="2022-02-18T15:52:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUiBank -->
+      </class> <!-- pages.rest.Login -->
+      <class name="pages.rest.CreateNewAccount">
+        <test-method status="PASS" signature="createNewAccount()[pri:0, instance:pages.rest.CreateNewAccount@1e6d1014]" name="createNewAccount" duration-ms="823" started-at="2022-02-18T15:52:16 IST" depends-on-methods="pages.rest.Login.loginUiBank" finished-at="2022-02-18T15:52:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewAccount -->
+      </class> <!-- pages.rest.CreateNewAccount -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
